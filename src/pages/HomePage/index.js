@@ -31,7 +31,6 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>Home</h1>
       <SearchBar getResult={getData} />
       <div className="home-page">
         {repoList.map((repoData, i) => (
