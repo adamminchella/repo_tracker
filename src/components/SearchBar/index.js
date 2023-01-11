@@ -20,7 +20,9 @@ const SearchBar = ({ getResult }) => {
 
   return (
     <header>
-      <img className="logo" src="../assets/images/favicon.png" />
+      <a href="https://github.com/">
+        <img className="logo" src="../assets/images/favicon.png" />
+      </a>
       <form onSubmit={handleSubmit} aria-label="search">
         <label htmlFor="username"></label>
 

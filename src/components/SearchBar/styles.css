@@ -59,5 +59,9 @@ header {
   left: 20px;
   width: 40px;
   border-radius: 20px;
-  filter: opacity(85%);
+  filter: opacity(95%);
+}
+
+.logo:hover {
+  filter: opacity(80%);
 }
