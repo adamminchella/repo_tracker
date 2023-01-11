@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+// SearchBar component
 
-const SearchBar = ({ submitForm }) => {
+import React, { useState } from "react";
+import HomePage from "../../pages/HomePage";
+
+const SearchBar = ({ getResult }) => {
   const [username, setUsername] = useState("");
 
   const updateInput = (e) => {
@@ -10,20 +13,22 @@ const SearchBar = ({ submitForm }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitForm(username);
+    getResult(username);
     setUsername("");
   };
 
+
   return (
-    <form onSubmit={handleSubmit} aria-label="search">
+    <form onSubmit={ handleSubmit } aria-label="search">
       <label htmlFor="username"></label>
       <input
         type="text"
+        name="username"
         value={username}
         id="username"
-        onChange={updateInput}
+        onChange={ updateInput }
       />
-      <input type="submit" value="Search" />
+      <button type="submit" >Submit</button>
     </form>
   );
 };
