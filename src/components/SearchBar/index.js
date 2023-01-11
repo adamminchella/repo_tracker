@@ -1,7 +1,8 @@
 // SearchBar component
 
 import React, { useState } from "react";
-import HomePage from "../../pages/HomePage";
+
+import "./styles.css";
 
 const SearchBar = ({ getResult }) => {
   const [username, setUsername] = useState("");
@@ -17,20 +18,23 @@ const SearchBar = ({ getResult }) => {
     setUsername("");
   };
 
-
   return (
-    <form onSubmit={ handleSubmit } aria-label="search">
-      <label htmlFor="username">Please enter GitHub username:</label>
-      <br />
-      <input
-        type="text"
-        name="username"
-        value={username}
-        id="username"
-        onChange={ updateInput }
-      />
-      <button type="submit" >Submit</button>
-    </form>
+    <header>
+      <form onSubmit={handleSubmit} aria-label="search">
+        <label htmlFor="username">Please enter GitHub username:</label>
+        <br />
+        <div className="search-container">
+          <input
+            type="text"
+            name="username"
+            value={username}
+            id="username"
+            onChange={updateInput}
+          />
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </header>
   );
 };
 
