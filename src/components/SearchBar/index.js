@@ -20,6 +20,7 @@ const SearchBar = ({ getResult }) => {
 
   return (
     <header>
+      <img className="logo" src="../assets/images/favicon.png" />
       <form onSubmit={handleSubmit} aria-label="search">
         <label htmlFor="username"></label>
 
