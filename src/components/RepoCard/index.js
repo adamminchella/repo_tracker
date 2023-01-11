@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles.css"
 
+
 const RepoCard = ({ data }) => {
-  const date = new Date(data.pushed_at).toDateString()
-  console.log(date)
-  
+
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
@@ -29,6 +28,13 @@ const RepoCard = ({ data }) => {
     fetchLanguageData();
   }, []);
 
+
+  const pushedDate = new Date(data.pushed_at).toDateString()
+  let partPushedDate = pushedDate.slice(3)
+
+  const createdDate = new Date(data.created_at).toDateString()
+  let partCreatedDate = createdDate.slice(3)
+
   return (
     <div className="all-cards">
       <span className="header">
@@ -44,18 +50,14 @@ const RepoCard = ({ data }) => {
       </div>
       <div className="card" id="created">
         <h3>Created:</h3>
-        <p>{data.created_at}</p>
+        <p>{partCreatedDate}</p>
       </div>
-
-
       <div className="card" id="last-push">
         <h3>Updated</h3>
-        <p>{date}</p>
+        <p>{partPushedDate}</p>
       </div>
-
-
       <div className="card" id="fork">
-        <h3>Forks:</h3>
+        <img src="../assets/images/fork_icon.png" alt="fork" />
         <p>{data.forks_count}</p>
       </div>
     </div>
