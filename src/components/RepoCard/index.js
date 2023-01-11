@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./styles.css"
 
-
 const RepoCard = ({ data }) => {
-
+  
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
@@ -42,7 +41,9 @@ const RepoCard = ({ data }) => {
           <h2>{data.name}</h2>
         </div>
         <div className="card" id="visibility">
-          <p>{data.visibility.charAt(0).toUpperCase() + data.visibility.slice(1)}</p> 
+          <p>
+            {data.visibility.charAt(0).toUpperCase() + data.visibility.slice(1)}
+          </p>
         </div>
       </span>
       <div className="card" id="link">
@@ -52,14 +53,25 @@ const RepoCard = ({ data }) => {
         <h3>Created:</h3>
         <p>{partCreatedDate}</p>
       </div>
+
+
       <div className="card" id="last-push">
         <h3>Updated</h3>
         <p>{partPushedDate}</p>
       </div>
+
+
       <div className="card" id="fork">
         <img src="../assets/images/fork_icon.png" alt="fork" />
         <p>{data.forks_count}</p>
       </div>
+
+      {languages.map((language) => (
+        <>
+          <h4>{language.language}</h4>
+          <p>{language.percent}%</p>
+        </>
+      ))}
     </div>
   );
 };
