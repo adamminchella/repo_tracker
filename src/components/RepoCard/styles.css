@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Mona Sans';
+    src:
+      url('../../../assets/Mona-Sans.woff') format('woff2 supports variations'),
+      url('../../../assets/Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+  }
+
+:root {
+    --gitblue: #0969DA;
+    --gitgrey: #57606A;
+    --gitborder: #D8DEE4; 
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.home-page {
+    background-color: #ffffff;
+    font-family: 'Mona Sans';
+}
+
+.all-cards {
+    justify-content: center;
+    margin-left: 20%;
+    border-top: 0.5px solid var(--gitborder);
+    border-left: 1px solid var(--gitborder);
+    border-right: 1px solid var(--gitborder);
+    width: 70%;
+    padding: 20px;
+}
+
+.card {
+    color: var(--gitgrey);
+
+}
+
+.header {
+    display: flex;
+}
+
+/* Individual repo elements */
+
+#name {
+    color: var(--gitblue);
+    margin-right: 5%;
+}
+
+#visibility {
+    border: 1px solid var(--gitborder);
+    padding-top: 1%;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    height: 20%;
+}
+
+#link a {
+    text-decoration: none;
+    color: var(--gitgrey);
+}
+
+
+

@@ -33,9 +33,11 @@ const HomePage = () => {
     <>
       <h1>Home</h1>
       <SearchBar getResult={getData} />
-      {repoList.map((repoData, i) => (
-        <RepoCard key={i} data={repoData} />
-      ))}
+      <div className="home-page">
+        {repoList.map((repoData, i) => (
+          <RepoCard key={i} data={repoData} />
+        ))}
+      </div>
     </>
   );
 };

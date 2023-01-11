@@ -20,7 +20,8 @@ const SearchBar = ({ getResult }) => {
 
   return (
     <form onSubmit={ handleSubmit } aria-label="search">
-      <label htmlFor="username"></label>
+      <label htmlFor="username">Please enter GitHub username:</label>
+      <br />
       <input
         type="text"
         name="username"

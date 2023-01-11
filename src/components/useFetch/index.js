@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-const getResult = (url) => { 
+const getFetch = (url) => { 
 
     // Defining variables
     const [data, setData] = useState(null); 
@@ -36,4 +36,4 @@ const getResult = (url) => {
 }
 
 // Exporting the function
-export default getResult;
+export default getFetch;
