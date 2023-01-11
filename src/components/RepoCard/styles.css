@@ -22,6 +22,17 @@
 .home-page {
     background-color: #ffffff;
     font-family: 'Mona Sans';
+    margin-top: 20px;
+}
+
+.home-page :first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.home-page :last-child {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .all-cards {
@@ -30,7 +41,7 @@
     border-top: 0.5px solid var(--gitborder);
     border-left: 1px solid var(--gitborder);
     border-right: 1px solid var(--gitborder);
-    width: 70%;
+    width: 50%;
     padding: 20px;
 }
 
@@ -44,6 +55,8 @@
 }
 
 /* Individual repo elements */
+
+/* Username */
 
 #name {
     color: var(--gitblue);
@@ -62,7 +75,7 @@
     height: 20%;
 }
 
-/* Githib link */
+/* Github repo link */
 
 #link a {
     text-decoration: none;
@@ -82,25 +95,51 @@
     margin-left: 5px;
 }
 
-#last-push {
-    display: flex;
-}
-
-#last-push #updated {
-   margin-right: 5px;
-}
-
+/* Number fo forks  */
 
 #fork {
     display: flex;
+    font-size: 15px;
 }
 
 #fork img {
     height: 20px;
     width: 20px;
     background-color: #ffffff;
+    opacity: 50%;
+    margin-right: 5px;
 }
 
+/* Updated on */
 
+#last-push {
+    display: flex;
+    font-size: 15px;
+}
 
+#last-push #updated {
+   margin-right: 5px;
+}
 
+/* Bottom row of forks and updated on */
+
+.fork-and-update {
+    display: flex;
+}
+
+/* Language and percentage */
+
+#language {
+    display: flex;
+    font-size: 15px;
+}
+
+#language h4 {
+    display: flex;
+    margin-right: 5px;
+}
+
+#language p {
+    display: flex;
+    margin-right: 5px;
+}

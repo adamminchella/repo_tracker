@@ -38,7 +38,7 @@ const RepoCard = ({ data }) => {
     <div className="all-cards">
       <span className="name-and-visibility">
         <div className="card" id="name">
-          <h2>{data.name}</h2>
+          <h3>{data.name}</h3>
         </div>
         <div className="card" id="visibility">
           <p>
@@ -54,21 +54,24 @@ const RepoCard = ({ data }) => {
         <p id="created-on">created on</p>
         <p>{partCreatedDate}</p>
       </div>
-      <div className="card" id="last-push">
-        <p id="updated">Updated on</p>
-        <p>{partPushedDate}</p>
-      </div>
-      <div className="card" id="fork">
-        <img src="../assets/images/fork_icon.png" alt="fork" />
-        <p>{data.forks_count}</p>
-      </div>
-
-      {languages.map((language) => (
-        <>
-          <h4>{language.language}</h4>
-          <p>{language.percent}%</p>
-        </>
-      ))}
+      <span className="fork-and-update">
+        <div className="card" id="fork">
+          <img src="../assets/images/fork_icon.png" alt="fork" />
+          <p>{data.forks_count}</p>
+        </div>
+        <div className="card" id="last-push">
+          <p id="updated">Updated on</p>
+          <p>{partPushedDate}</p>
+        </div>
+      </span>
+      <div className="card" id="language">
+        {languages.map((language) => (
+          <>
+            <h4>{language.language}</h4>
+            <p>{language.percent}%</p>
+          </>
+        ))}
+        </div>
     </div>
   );
 };
