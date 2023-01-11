@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles.css"
+import "./styles.css";
 
 const RepoCard = ({ data }) => {
-  const date = new Date(data.pushed_at).toDateString()
-  console.log(date)
-  
+  const date = new Date(data.pushed_at).toDateString();
+
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
@@ -36,7 +35,9 @@ const RepoCard = ({ data }) => {
           <h2>{data.name}</h2>
         </div>
         <div className="card" id="visibility">
-          <p>{data.visibility.charAt(0).toUpperCase() + data.visibility.slice(1)}</p> 
+          <p>
+            {data.visibility.charAt(0).toUpperCase() + data.visibility.slice(1)}
+          </p>
         </div>
       </span>
       <div className="card" id="link">
@@ -47,17 +48,22 @@ const RepoCard = ({ data }) => {
         <p>{data.created_at}</p>
       </div>
 
-
       <div className="card" id="last-push">
         <h3>Updated</h3>
         <p>{date}</p>
       </div>
 
-
       <div className="card" id="fork">
         <h3>Forks:</h3>
         <p>{data.forks_count}</p>
       </div>
+
+      {languages.map((language) => (
+        <>
+          <h4>{language.language}</h4>
+          <p>{language.percent}%</p>
+        </>
+      ))}
     </div>
   );
 };
