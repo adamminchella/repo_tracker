@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./styles.css"
 
 const RepoCard = ({ data }) => {
-
   const date = new Date(data.pushed_at).toDateString()
   console.log(date)
   
+  const [languages, setLanguages] = useState([]);
+
+  useEffect(() => {
+    async function fetchLanguageData() {
+      const languagesData = await axios.get(data.languages_url);
+
+      let total = 0;
+      for (let language in languagesData.data) {
+        total += languagesData.data[language];
+      }
+
+      const arr = [];
+      for (let language in languagesData.data) {
+        arr.push({
+          language: language,
+          percent: Math.round((languagesData.data[language] / total) * 100),
+        });
+      }
+      setLanguages(arr);
+    }
+    fetchLanguageData();
+  }, []);
+
   return (
     <div className="all-cards">
       <span className="header">
