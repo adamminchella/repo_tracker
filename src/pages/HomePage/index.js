@@ -8,6 +8,8 @@ import axios from "axios";
 
 import RepoCard from "../../components/RepoCard";
 
+import "./styles.css";
+
 const HomePage = () => {
   const [repoList, setRepoList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -27,11 +29,21 @@ const HomePage = () => {
     loadRepo();
   };
 
-  console.log(repoList);
+  const renderUser = () => {
+    if (repoList.length != 0) {
+      return (
+        <div className="user-info-container">
+          <img className="avatar" src={repoList[0].owner.avatar_url} />
+          <h2 className="avatar-username">{repoList[0].owner.login}</h2>
+        </div>
+      );
+    }
+  };
 
   return (
     <>
       <SearchBar getResult={getData} />
+      {renderUser()}
       <div className="home-page">
         {repoList.map((repoData, i) => (
           <RepoCard key={i} data={repoData} />
