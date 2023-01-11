@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-cli serve --mode development --config config/webpack.config.js",
+    "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

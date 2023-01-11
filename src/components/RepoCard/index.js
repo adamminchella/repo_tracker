@@ -29,14 +29,14 @@ const RepoCard = ({ data }) => {
 
 
   const pushedDate = new Date(data.pushed_at).toDateString()
-  let partPushedDate = pushedDate.slice(3)
+  let partPushedDate = pushedDate.slice(3).replace(" 202", ", 202").replace(" 0", " ")
 
   const createdDate = new Date(data.created_at).toDateString()
-  let partCreatedDate = createdDate.slice(3)
+  let partCreatedDate = createdDate.slice(3).replace(" 202", ", 202").replace(" 0", " ")
 
   return (
     <div className="all-cards">
-      <span className="header">
+      <span className="name-and-visibility">
         <div className="card" id="name">
           <h2>{data.name}</h2>
         </div>
@@ -50,17 +50,14 @@ const RepoCard = ({ data }) => {
         <a href={data.html_url}>{data.html_url}</a>
       </div>
       <div className="card" id="created">
-        <h3>Created:</h3>
+        <p>{data.name}</p>
+        <p id="created-on">created on</p>
         <p>{partCreatedDate}</p>
       </div>
-
-
       <div className="card" id="last-push">
-        <h3>Updated</h3>
+        <p id="updated">Updated on</p>
         <p>{partPushedDate}</p>
       </div>
-
-
       <div className="card" id="fork">
         <img src="../assets/images/fork_icon.png" alt="fork" />
         <p>{data.forks_count}</p>

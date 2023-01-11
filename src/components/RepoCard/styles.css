@@ -36,10 +36,10 @@
 
 .card {
     color: var(--gitgrey);
-
+    padding: 8px;
 }
 
-.header {
+.name-and-visibility {
     display: flex;
 }
 
@@ -47,8 +47,11 @@
 
 #name {
     color: var(--gitblue);
-    margin-right: 5%;
+    margin-right: 1%;
+    font-size: 15px;
 }
+
+/* Repo visibility */
 
 #visibility {
     border: 1px solid var(--gitborder);
@@ -59,10 +62,45 @@
     height: 20%;
 }
 
+/* Githib link */
+
 #link a {
     text-decoration: none;
     color: var(--gitgrey);
+    font-size: 15px;
 }
+
+/* Created date */
+
+#created {
+    display: flex;
+    font-size: 15px;
+}
+
+#created-on{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#last-push {
+    display: flex;
+}
+
+#last-push #updated {
+   margin-right: 5px;
+}
+
+
+#fork {
+    display: flex;
+}
+
+#fork img {
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+}
+
 
 
 
