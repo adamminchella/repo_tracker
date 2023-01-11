@@ -2,22 +2,53 @@ header {
   width: 100%;
   height: 80px;
   background-color: rgb(36, 41, 46);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-container {
-  width: 20%;
+  width: 100%;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid rgb(87, 96, 106);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
 }
 
 #username {
+  width: 300px;
+  color: rgb(200, 201, 203);
   flex-grow: 1;
   border: none;
   background-color: transparent;
+  padding: 4px 10px;
+}
+
+#username::placeholder {
+  color: rgb(200, 201, 203);
 }
 
 #username:focus {
   outline: none;
+}
+
+.search-button {
+  margin: 0 3px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-icon {
+  filter: opacity(60%);
+  width: 20px;
+  height: 20px;
+}
+
+.search-icon:hover {
+  filter: opacity(100%);
 }

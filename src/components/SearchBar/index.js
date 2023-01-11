@@ -21,17 +21,23 @@ const SearchBar = ({ getResult }) => {
   return (
     <header>
       <form onSubmit={handleSubmit} aria-label="search">
-        <label htmlFor="username">Please enter GitHub username:</label>
-        <br />
+        <label htmlFor="username"></label>
+
         <div className="search-container">
           <input
+            placeholder="Enter username..."
             type="text"
             name="username"
             value={username}
             id="username"
             onChange={updateInput}
           />
-          <button type="submit">Submit</button>
+          <button className="search-button" type="submit">
+            <img
+              className="search-icon"
+              src="../assets/images/search_icon.svg"
+            />
+          </button>
         </div>
       </form>
     </header>
