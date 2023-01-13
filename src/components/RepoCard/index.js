@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
+import LanguageChart from "../LanguageChart";
+
 import "./styles.css";
 
 const RepoCard = ({ data }) => {
@@ -68,15 +71,10 @@ const RepoCard = ({ data }) => {
           <p id="updated">Updated on</p>
           <p>{partPushedDate}</p>
         </div>
-      </span>
-      <div className="card" id="language">
         {languages.map((language) => (
-          <>
-            <h4>{language.language}</h4>
-            <p>{language.percent}%</p>
-          </>
+          <LanguageChart languages={language} />
         ))}
-      </div>
+      </span>
     </div>
   );
 };
