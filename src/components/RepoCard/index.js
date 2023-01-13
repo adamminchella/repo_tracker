@@ -38,7 +38,7 @@ const RepoCard = ({ data }) => {
     <div className="all-cards">
       <span className="name-and-visibility">
         <div className="card" id="name">
-          <h3>{data.name}</h3>
+          <p>{data.name}</p>
         </div>
         <div className="card" id="visibility">
           <p>
