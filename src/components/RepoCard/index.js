@@ -9,7 +9,6 @@ const RepoCard = ({ data }) => {
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
-    console.log("rendered");
     async function fetchLanguageData() {
       const languagesData = await axios.get(data.languages_url);
 
@@ -42,6 +41,7 @@ const RepoCard = ({ data }) => {
     .replace(" 202", ", 202")
     .replace(" 0", " ");
 
+  console.log(languages);
   return (
     <div className="all-cards">
       <span className="name-and-visibility">
@@ -71,7 +71,7 @@ const RepoCard = ({ data }) => {
           <p id="updated">Updated on</p>
           <p>{partPushedDate}</p>
         </div>
-        <LanguageChart languages={languages} />
+        {<LanguageChart languages={languages} />}
       </span>
     </div>
   );
