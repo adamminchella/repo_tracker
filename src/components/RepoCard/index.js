@@ -71,9 +71,7 @@ const RepoCard = ({ data }) => {
           <p id="updated">Updated on</p>
           <p>{partPushedDate}</p>
         </div>
-        {languages.map((language) => (
-          <LanguageChart languages={language} />
-        ))}
+        <LanguageChart languages={languages} />
       </span>
     </div>
   );
