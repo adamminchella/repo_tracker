@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles.css"
+
+import LanguageChart from "../LanguageChart";
+
+import "./styles.css";
 
 const RepoCard = ({ data }) => {
-  
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
+    console.log("rendered");
     async function fetchLanguageData() {
       const languagesData = await axios.get(data.languages_url);
 
@@ -25,14 +28,19 @@ const RepoCard = ({ data }) => {
       setLanguages(arr);
     }
     fetchLanguageData();
-  }, []);
+  }, [data]);
 
+  const pushedDate = new Date(data.pushed_at).toDateString();
+  let partPushedDate = pushedDate
+    .slice(3)
+    .replace(" 202", ", 202")
+    .replace(" 0", " ");
 
-  const pushedDate = new Date(data.pushed_at).toDateString()
-  let partPushedDate = pushedDate.slice(3).replace(" 202", ", 202").replace(" 0", " ")
-
-  const createdDate = new Date(data.created_at).toDateString()
-  let partCreatedDate = createdDate.slice(3).replace(" 202", ", 202").replace(" 0", " ")
+  const createdDate = new Date(data.created_at).toDateString();
+  let partCreatedDate = createdDate
+    .slice(3)
+    .replace(" 202", ", 202")
+    .replace(" 0", " ");
 
   return (
     <div className="all-cards">
@@ -63,15 +71,10 @@ const RepoCard = ({ data }) => {
           <p id="updated">Updated on</p>
           <p>{partPushedDate}</p>
         </div>
-      </span>
-      <div className="card" id="language">
         {languages.map((language) => (
-          <>
-            <h4>{language.language}</h4>
-            <p>{language.percent}%</p>
-          </>
+          <LanguageChart languages={language} />
         ))}
-        </div>
+      </span>
     </div>
   );
 };
